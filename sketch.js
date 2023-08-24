@@ -7,8 +7,7 @@ function setup()
 {
     noCanvas();
     video = createCapture(VIDEO);
-    // video.size(110, 51);
-    video.size(68, 50);
+    video.size(110, 52);
     asciiDiv = createDiv();
 }
 
@@ -26,6 +25,7 @@ function draw()
             const r = video.pixels[pixelIndex + 0];
             const g = video.pixels[pixelIndex + 1];
             const b = video.pixels[pixelIndex + 2];
+            
             const avg = (r + g + b) / 3; // look at brightness value of each pixels
             const len = density.length;
             const charIndex = floor(map(avg, 0, 255, 0, len));
